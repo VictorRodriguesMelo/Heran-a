@@ -23,17 +23,17 @@ public class Program {
 		int quantProduct = vh.nextInt();	
 		
 		for (int i = 0; i < quantProduct; i++) {
-			System.out.println("Common, used or imported (i/c/u)? ");
+			System.out.print("Common, used or imported (i/c/u)? ");
 			char ch = vh.next().charAt(0);
 			
-			System.out.println("Name: ");
+			System.out.print("Name: ");
 			String name = vh.next();
 			
-			System.out.println("Price: ");
+			System.out.print("Price: ");
 			double price = vh.nextDouble();
 			
 			if (ch == 'i') {
-				System.out.println("CustumsFee: ");			//importedProduct
+				System.out.print("CustumsFee: ");			//importedProduct
 				double customsFee = vh.nextDouble();				
 				Product pro = new ImportedProduct(name, price, customsFee );
 				list.add(pro);
@@ -43,11 +43,10 @@ public class Program {
 				list.add(prod);			
 			}
 			if (ch == 'u') {
-					System.out.println("Digite a data: ");
-					String data = vh.next();
-					Date manufactureData= formato.parse(data);					
-					Product victor = new UsedProduct(name, price, manufactureData);
-					list.add(victor);					
+					System.out.print("Digite a data: ");
+					Date manufactureData= formato.parse(vh.next());					
+					Product produ = new UsedProduct(name, price, manufactureData);
+					list.add(produ);					
 			}
 		}
 		System.out.println("PRICE TAGS: ");

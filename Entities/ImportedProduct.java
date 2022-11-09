@@ -16,16 +16,14 @@ public class ImportedProduct extends Product {
 	public void setCustomsFee(Double customsFee) {
 		this.customsFee = customsFee;
 	}
-	//public Double priceTag(Double totalPrice) {
-		//totalPrice = getPrice() + customsFee;
-	//return  totalPrice; 
-	//}
+	public Double totalPrice() {
+	return getPrice() + customsFee; 
+	}
 	public String priceTag() {
-		double totalPrice = 0;
-		totalPrice = getPrice() + customsFee;
+		
 		return 			getName() 
 					+ "  $  "
-					+ totalPrice 
+					+ totalPrice()
 					+ "(Customs fee: $ " 
 					+customsFee
 					+ ")";
